@@ -33,33 +33,7 @@ Spec::Rake::SpecTask.new(:rcov) do |spec|
 end
 
 task :spec => :check_dependencies
-
 task :default => :spec
-=======
-require 'rake/testtask'
-Rake::TestTask.new(:test) do |test|
-  test.libs << 'lib' << 'test'
-  test.pattern = 'test/**/test_*.rb'
-  test.verbose = true
-end
-
-begin
-  require 'rcov/rcovtask'
-  Rcov::RcovTask.new do |test|
-    test.libs << 'test'
-    test.pattern = 'test/**/test_*.rb'
-    test.verbose = true
-  end
-rescue LoadError
-  task :rcov do
-    abort "RCov is not available. In order to run rcov, you must: sudo gem install spicycode-rcov"
-  end
-end
-
-task :test => :check_dependencies
-
-task :default => :test
->>>>>>> cb623a605a48eac3dee86d757d5fe64ef1b2b006:Rakefile
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
