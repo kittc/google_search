@@ -22,6 +22,7 @@ Gem::Specification.new do |s|
      "README.rdoc",
      "Rakefile",
      "VERSION",
+     "google_search.gemspec",
      "lib/google_search.rb",
      "spec/google_search_spec.rb",
      "spec/spec.opts",
