@@ -1,17 +1,21 @@
-= google_search
+= Google Search
 
-Description goes here.
+Tiny wrapper for Google Search APIs.
 
-== Note on Patches/Pull Requests
- 
-* Fork the project.
-* Make your feature addition or bug fix.
-* Add tests for it. This is important so I don't break it in a
-  future version unintentionally.
-* Commit, do not mess with rakefile, version, or history.
-  (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
-* Send me a pull request. Bonus points for topic branches.
+== Usage
+
+  require 'google_search'
+
+  GoogleSearch.web :q => "pink floyd"
+
+  => {"responseData"=>{"results"=>[{"GsearchResultClass"=>"GwebSearch", "title"=>"<b>Pink Floyd</b> | The Official Site", 
+     "url"=>"http://www.pinkfloyd.com/", "cacheUrl"=>"http://www.google.com/search?q=cache:iFN1qQtvV7gJ:www.pinkfloyd.com", 
+     "content"=>"", "visibleUrl"=>"www.pinkfloyd.com"...yaddayadda
+
+You can also search videos, images, books etc. by calling <tt>GoogleSearch.[SEARCH TYPE]</tt> (e.g. GoogleSearch.images :q => "apple pie")
+
+For documention on options and response formats see http://code.google.com/intl/hr/apis/ajaxsearch/documentation/reference.html#_intro_fonje
 
 == Copyright
 
-Copyright (c) 2010 Saša_Branković. See LICENSE for details.
+Copyright (c) 2010 Sasa Brankovic. See LICENSE for details.
