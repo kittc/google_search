@@ -28,7 +28,7 @@ You may specify default options that go into every request. Usually you'll put y
     search.images(:q => "moon") 
   end
 
-This will do search 5 times, each time for a different page (1..5). Useful for getting more results at once.
+This will do search 5 times, each time given a different page (1..5). Useful for getting more results at once.
 
 === Handling errors
 
