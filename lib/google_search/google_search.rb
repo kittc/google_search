@@ -26,8 +26,18 @@ class GoogleSearch
   # :singleton-method: patent(options)
 
   def self.method_missing(method, args) # :nodoc:
-    raise "Unknown search type" unless self.supported_search_types.include?(method)
+    raise "Unknown search type '#{method}'" unless self.supported_search_types.include?(method)
     self.query(method, args)
+  end
+
+  # Yields the search object for number +pages+ specified.
+  # Each page will contain 8 results, +pages+ must be something enumerable
+  def self.with_pages(pages)
+    pages.each do |page|
+      GoogleSearch.with_options :rsz => "large", :start => (page - 1) * 8 do |search|
+        yield search
+      end
+    end
   end
 
   private
