@@ -16,6 +16,16 @@ You can also search videos, images, books etc. by calling <tt>GoogleSearch.[SEAR
 
 For documention on options and response formats see http://code.google.com/intl/hr/apis/ajaxsearch/documentation/reference.html#_intro_fonje
 
+=== Default options
+
+You may specify default options that go into every request. Usually you'll put your API key here.
+
+  GoogleSearch.default_options = { :key => "my-key", :hl => "hr" }
+
+=== Handling errors
+
+On invalid response a GoogleSearchError is raised, describing the error.
+
 == Copyright
 
 Copyright (c) 2010 Sasa Brankovic. See LICENSE for details.
