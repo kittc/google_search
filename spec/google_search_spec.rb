@@ -5,7 +5,7 @@ describe "Google search" do
     require 'google_search'
 
     before :all do
-      GoogleSearch.default_options :hl => "hr"
+      GoogleSearch.default_options = { :hl => "hr", :start => 10 }
       @result = GoogleSearch.web :q => "Michael Jackson"
     end
 
