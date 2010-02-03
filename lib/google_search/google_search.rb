@@ -1,8 +1,31 @@
 class GoogleSearch
+  ##
+  # :singleton-method:
   # Sets up default options that should be present in every request
   cattr_accessor :default_options
+ 
+  ##
+  # :singleton-method: web(options)
+  
+  ## 
+  # :singleton-method: video(options)
+  
+  ##
+  # :singleton-method: blogs(options)
 
-  def self.method_missing(method, args)
+  ##
+  # :singleton-method: news(options)
+
+  ##
+  # :singleton-method: books(options)
+
+  ##
+  # :singleton-method: images(options)
+
+  ##
+  # :singleton-method: patent(options)
+
+  def self.method_missing(method, args) # :nodoc:
     raise "Unknown search type" unless self.supported_search_types.include?(method)
     self.query(method, args)
   end
@@ -11,7 +34,7 @@ class GoogleSearch
     def self.supported_search_types
       [:web, :local, :video, :blogs, :news, :books, :images, :patent]
     end
-
+      
     def self.query(type, options)
       options = (self.default_options || {}).merge(options)
       options[:v] = "1.0"
