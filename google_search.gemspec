@@ -26,6 +26,7 @@ Gem::Specification.new do |s|
      "lib/google_search.rb",
      "lib/google_search/google_search.rb",
      "lib/google_search/google_search_error.rb",
+     "spec/google_search_paginated_spec.rb",
      "spec/google_search_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"
@@ -37,6 +38,7 @@ Gem::Specification.new do |s|
   s.summary = %q{Tiny wrapper for Google Search API}
   s.test_files = [
     "spec/google_search_spec.rb",
+     "spec/google_search_paginated_spec.rb",
      "spec/spec_helper.rb"
   ]
 
