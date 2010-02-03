@@ -1,0 +1,2 @@
+class GoogleSearchError < RuntimeError
+end
